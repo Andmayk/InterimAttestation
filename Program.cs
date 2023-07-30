@@ -33,6 +33,20 @@ int SizeNewArray(string[] ArraySourse)
     return count;
 }
 
+void FillNewArray(string[] ArraySourse, string[] ArrayForFill)
+{
+    int count = 0;
+    for (int i = 0; i < ArraySourse.Length; i++)
+    {
+        if (ArraySourse[i].Length <= 3)
+        {
+            ArrayForFill[count] = ArraySourse[i];
+            count++;
+        }
+
+    }
+}
+
 //============================================================================
 int size = ReadInt("Введите размер массива: ");
 
@@ -43,4 +57,8 @@ Console.Write("Исходный массив: ");
 PrintArray(arrayOfString);
 
 string[] newArrayOfString = new string[SizeNewArray(arrayOfString)];
+
+FillNewArray(arrayOfString, newArrayOfString);
+
+PrintArray(newArrayOfString);
 
