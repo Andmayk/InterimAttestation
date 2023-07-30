@@ -18,9 +18,9 @@ void ReadArray(string[] ArrayForRead)
     }
 }
 
-void PrintArray(string[] ArrayForPrint)
+void PrintArray(string[] ArrayForPrint, string separator = ", ")
 {
-    Console.WriteLine($"[{string.Join(", ", ArrayForPrint)}]");
+    Console.WriteLine($"[{string.Join(separator, ArrayForPrint)}]");
 }
 
 int SizeNewArray(string[] ArraySourse)
@@ -53,12 +53,14 @@ int size = ReadInt("Введите размер массива: ");
 string[] arrayOfString = new string[size];
 
 ReadArray(arrayOfString);
+
 Console.Write("Исходный массив: ");
-PrintArray(arrayOfString);
+PrintArray(arrayOfString, ", ");
 
 string[] newArrayOfString = new string[SizeNewArray(arrayOfString)];
 
 FillNewArray(arrayOfString, newArrayOfString);
 
+Console.Write("Новый массив: ");
 PrintArray(newArrayOfString);
 
