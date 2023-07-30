@@ -23,6 +23,15 @@ void PrintArray(string[] ArrayForPrint)
     Console.WriteLine($"[{string.Join(", ", ArrayForPrint)}]");
 }
 
+int SizeNewArray(string[] ArraySourse)
+{
+    int count = 0;
+    for (int i = 0; i < ArraySourse.Length; i++)
+    {
+        if (ArraySourse[i].Length <= 3) count++;
+    }
+    return count;
+}
 
 //============================================================================
 int size = ReadInt("Введите размер массива: ");
@@ -33,4 +42,5 @@ ReadArray(arrayOfString);
 Console.Write("Исходный массив: ");
 PrintArray(arrayOfString);
 
+string[] newArrayOfString = new string[SizeNewArray(arrayOfString)];
 
