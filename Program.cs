@@ -14,7 +14,7 @@ void ReadArray(string[] ArrayForRead)
     for (int i = 0; i < ArrayForRead.Length; i++)
     {
         Console.Write((i + 1) + ": ");
-        ArrayForRead[i] = Console.ReadLine();
+        ArrayForRead[i] = Console.ReadLine()!;
     }
 }
 
